@@ -16,7 +16,7 @@
     </style>
 @endpush
 @section('content')
-
+{{-- {{dd($categories->links())}} --}}
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -115,7 +115,8 @@
 
                         </tbody>
                     </table>
-                    {{ $categories->appends(request()->query())->links() }}
+                    {{-- {{ $categories->appends(request()->query())->links() }} --}}
+                    {!! $categories->links() !!}
 
                 </div>
                 <!-- /.card-body -->
