@@ -36,9 +36,16 @@ class CategoryController extends Controller
         return view('admin.categories.edit', compact('category'));
     }
 
-    public function update(UpdateCategoryRequest $request)
+    public function update(UpdateCategoryRequest $request, Category $category)
     {
-        // return view('admin.categories.create');
+
+        $data['name'] = $request->name;
+        $data['active'] = $request->active ? 1 : 0;
+
+        $category->update($data);
+
+        return redirect()->route('admin.categories.index')->with('success', 'Data Updated Successfully');
+
     }
 
     public function destroy(Category $category)
