@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
-    Route::view('home', 'admin.home')->name('home');
+    Route::view('/', 'admin.home')->name('home');
 
     Route::resource('categories', CategoryController::class);
 });
