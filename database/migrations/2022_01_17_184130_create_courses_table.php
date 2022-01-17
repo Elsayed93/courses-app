@@ -25,6 +25,7 @@ class CreateCoursesTable extends Migration
             $table->integer('views')->default(0);
             $table->enum('levels', ['beginner', 'immediate', 'high']);
             $table->integer('hours');
+            $table->string('image')->default('default.jpg');
             $table->tinyInteger('active')->default(1)->index();
             $table->softDeletes();
 

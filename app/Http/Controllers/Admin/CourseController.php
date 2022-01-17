@@ -26,7 +26,7 @@ class CourseController extends Controller
 
     public function store(CreateCourseRequest $request)
     {
-
+// dd($request->all());
         $data = new CourseDataObject();
         $data = $data->storeDO($request);
 

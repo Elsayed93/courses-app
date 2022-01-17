@@ -18,6 +18,7 @@ class Course extends Model
         'views',
         'levels',
         'hours',
+        'image',
         'active',
     ];
 }

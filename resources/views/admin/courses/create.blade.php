@@ -38,7 +38,7 @@
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form id="quickForm" action="{{ route('admin.courses.store') }}" method="POST">
+            <form id="quickForm" action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
@@ -68,9 +68,10 @@
                     <div class="form-group">
                         <label for="levels">Course levels</label>
                         <select class="custom-select rounded-0" id="levels" name="levels">
-                            <option value="beginner" {{old('levels') == 'beginner' ? 'selected' :''}}>Beginner</option>
-                            <option value="immediate" {{old('levels') == 'immediate' ? 'selected' :''}}>Immediate</option>
-                            <option value="high" {{old('levels') == 'high' ? 'selected' :''}}>High</option>
+                            <option value="beginner" {{ old('levels') == 'beginner' ? 'selected' : '' }}>Beginner</option>
+                            <option value="immediate" {{ old('levels') == 'immediate' ? 'selected' : '' }}>Immediate
+                            </option>
+                            <option value="high" {{ old('levels') == 'high' ? 'selected' : '' }}>High</option>
                         </select>
                     </div>
 
@@ -92,6 +93,17 @@
                                 </option>
                             @endforeach
                         </select>
+                    </div>
+
+                    {{-- image --}}
+                    <div class="form-group">
+                        <label for="exampleImage">Image</label>
+                        <input type="file" class="form-control imgInp" id="exampleImage" name="image" accept="image/*">
+                    </div>
+
+                    {{-- image preview --}}
+                    <div class="form-group">
+                        <img src="" alt="" class="img-thumbnail image-show" width="100" style="display: none;">
                     </div>
 
                     <div class="form-group mb-0">
