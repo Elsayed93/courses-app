@@ -14,9 +14,9 @@
                         </li>
 
                         <li class="breadcrumb-item">
-                            <a href="{{ route('admin.categories.index') }}">Categories</a>
+                            <a href="{{ route('admin.courses.index') }}">courses</a>
                         </li>
-                        <li class="breadcrumb-item active">Edit Category</li>
+                        <li class="breadcrumb-item active">Edit course</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -34,23 +34,24 @@
 
         <div class="card card-primary">
             <div class="card-header">
-                <h3 class="card-title">Edit Category</h3>
+                <h3 class="card-title">Edit course</h3>
             </div>
             <!-- /.card-header -->
+
             <!-- form start -->
-            <form id="quickForm" action="{{ route('admin.categories.update', $category->id) }}" method="POST">
+            <form id="quickForm" action="{{ route('admin.courses.update', $course->id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="categoryName">Category Name</label>
-                        <input type="text" name="name" class="form-control" id="categoryName"
-                            placeholder="Enter category name" value="{{ $category->name }}">
+                        <label for="courseName">course Name</label>
+                        <input type="text" name="name" class="form-control" id="courseName"
+                            placeholder="Enter course name" value="{{ $course->name }}">
                     </div>
                     <div class="form-group mb-0">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" name="active" class="custom-control-input" id="active"
-                                {{ $category->active == 1 ? 'checked' : '' }}>
+                                {{ $course->active == 1 ? 'checked' : '' }}>
                             <label class="custom-control-label" for="active">Active .</label>
                         </div>
                     </div>
