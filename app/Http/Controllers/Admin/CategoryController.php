@@ -45,7 +45,6 @@ class CategoryController extends Controller
         $category->update($data);
 
         return redirect()->route('admin.categories.index')->with('success', 'Data Updated Successfully');
-
     }
 
     public function destroy(Category $category)
@@ -53,5 +52,31 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('admin.categories.index')->with('success', 'Data Deleted Successfully');
+    }
+
+    // get all deleted categories
+    public function deletedCategories()
+    {
+        $deletedCategories = Category::onlyTrashed()->latest()->paginate(5);
+
+        return view('admin.categories.deleted_categories', compact('deletedCategories'));
+    }
+
+    // restore deleted category
+    public function restoreDeletedCategories($id)
+    {
+        $deletedCategory = Category::onlyTrashed()->find($id);
+        $deletedCategory->restore();
+
+        return redirect()->route('admin.categories.index')->with('success', 'Data Restored Successfully');
+    }
+
+    // Permanently delete category
+    public function permanentlyDeletedCategories($id)
+    {
+        $deletedCategory = Category::onlyTrashed()->find($id);
+        $deletedCategory->forceDelete();
+
+        return redirect()->route('admin.categories.index')->with('success', 'Data Deleted Permanently Successfully');
     }
 }

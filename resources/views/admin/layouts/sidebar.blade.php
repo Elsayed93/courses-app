@@ -38,7 +38,7 @@
 
 
                   <li class="nav-item">
-                      <a href="{{ route('admin.categories.index') }}" class="nav-link">
+                      <a href="{{ route('admin.categories.index') }}" class="nav-link {{request()->segment(2) == 'categories' ? 'active' : ''}}">
                           <i class="nav-icon fas fa-th"></i>
                           <p>
                               Categories
@@ -54,6 +54,42 @@
                           </p>
                       </a>
                   </li>
+
+
+                  <li class="nav-item {{request()->segment(2) == 'deleted-categories' ? 'menu-open' : ''}}">
+                      <a href="#" class="nav-link {{request()->segment(2) == 'deleted-categories' ? 'active' : ''}}">
+                          <i class="nav-icon fa fa-trash"></i>
+                          <p>
+                              Trash
+                              <i class="right fas fa-angle-left"></i>
+                          </p>
+                      </a>
+
+                      <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                              <a href="{{route('admin.deleted.categories')}}" class="nav-link {{request()->segment(2) == 'deleted-categories' ? 'active' : ''}}">
+                                  <i class="fas fa-th"></i>
+                                  <p>Deleted Categories</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="./index2.html" class="nav-link">
+                                  <i class="fas fa-book"></i>
+                                  <p>Deleted Courses</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+
+
+                  {{-- <li class="nav-item">
+                      <a href="#" class="nav-link">
+                          <i class="nav-icon fa fa-trash"></i>
+                          <p>
+                              Trash
+                          </p>
+                      </a>
+                  </li> --}}
 
               </ul>
 
