@@ -29,5 +29,12 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
+    <style>
+        table {
+            text-align: center;
+        }
+
+    </style>
+
     @stack('head')
 </head>
