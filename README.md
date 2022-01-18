@@ -56,3 +56,12 @@ php artisan migrate
 ```
 php artisan db:seed
 ```
+
+<p>
+If you did step numer 9 , you don't need to register to login to the application.
+You can login to the application using the following credentials:
+
+email: admin@example.com
+password => 123456789
+
+</p>
