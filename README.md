@@ -16,27 +16,21 @@ git clone https://github.com/Elsayed93/courses-app.git
 composer install
 ```
 
-### 3.Install NPM Dependencies
-
-```
-npm install
-```
-
-### 4.Create a copy of your .env file
+### 3.Create a copy of your .env file
 
 ```
 cp .env.example .env
 ```
 
-### 5.Generate an app encryption key
+### 4.Generate an app encryption key
 
 ```
 php artisan key:generate
 ```
 
-### 6.Create an empty database for our application
+### 5.Create an empty database for our application
 
-### 7.In the .env file, add database information to allow Laravel to connect to the database
+### 6.In the .env file, add database information to allow Laravel to connect to the database
 
 <p>
     We will want to allow Laravel to connect to the database that you just created in the previous step. To do this, we must add the connection credentials in the .env file and Laravel will handle the connection from there.
@@ -45,13 +39,13 @@ In the .env file fill in the DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_
 
 </p>
 
-### 8.Migrate the database
+### 7.Migrate the database
 
 ```
 php artisan migrate
 ```
 
-### 9.[Optional]: Seed the database
+### 8.[Optional]: Seed the database
 
 ```
 php artisan db:seed
