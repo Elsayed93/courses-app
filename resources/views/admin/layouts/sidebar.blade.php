@@ -56,8 +56,8 @@
                   </li>
 
 
-                  <li class="nav-item {{request()->segment(2) == 'deleted-categories' ? 'menu-open' : ''}}">
-                      <a href="#" class="nav-link {{request()->segment(2) == 'deleted-categories' ? 'active' : ''}}">
+                  <li class="nav-item {{request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses'  ? 'menu-open' : ''}}">
+                      <a href="#" class="nav-link {{request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses' ? 'active' : ''}}">
                           <i class="nav-icon fa fa-trash"></i>
                           <p>
                               Trash
@@ -73,7 +73,7 @@
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="./index2.html" class="nav-link">
+                              <a href="{{route('admin.deleted.courses')}}" class="nav-link {{request()->segment(2) == 'deleted-courses' ? 'active' : ''}}">
                                   <i class="fas fa-book"></i>
                                   <p>Deleted Courses</p>
                               </a>

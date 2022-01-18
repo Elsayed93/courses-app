@@ -34,6 +34,10 @@
             text-align: center;
         }
 
+        table td {
+            vertical-align: middle !important;
+        }
+
     </style>
 
     @stack('head')

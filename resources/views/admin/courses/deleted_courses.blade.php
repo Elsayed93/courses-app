@@ -11,12 +11,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Deleted Categories</h1>
+                    <h1>Deleted Courses</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Deleted categories</li>
+                        <li class="breadcrumb-item active">Deleted courses</li>
                     </ol>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Deleted categories</h3>
+                            <h3 class="card-title">Deleted courses</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -55,14 +55,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @if ($deletedCategories->count() > 0)
+                                    @if ($deletedCourses->count() > 0)
 
-                                        @foreach ($deletedCategories as $index => $category)
+                                        @foreach ($deletedCourses as $index => $course)
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
-                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $course->name }}</td>
                                                 <td>
-                                                    @if ($category->active == 1)
+                                                    @if ($course->active == 1)
                                                         <span class="badge bg-primary">Active</span>
                                                     @else
                                                         <span class="badge bg-warning">Not Active</span>
@@ -72,14 +72,14 @@
                                                 </td>
                                                 <td>
 
-                                                    <a href="{{ route('admin.restore.deleted.category', $category->id) }}"
+                                                    <a href="{{ route('admin.restore.deleted.course', $course->id) }}"
                                                         class="btn btn-warning btn-sm" title="edit">
                                                         Restore
                                                     </a>
 
 
 
-                                                    <form action="{{ route('admin.permanently.delete.category', $category->id) }}"
+                                                    <form action="{{ route('admin.permanently.delete.course', $course->id) }}"
                                                         method="post" id="deleteForm" style="display: inline-block;">
                                                         @csrf
 
@@ -96,13 +96,13 @@
 
                                     @else
                                         <th colspan="4" style="text-align:center">
-                                            There is no deleted categories
+                                            There is no deleted courses
                                         </th>
                                     @endif
 
                                 </tbody>
                             </table>
-                            {{ $deletedCategories->links() }}
+                            {{ $deletedCourses->links() }}
                         </div>
                         <!-- /.card-body -->
                     </div>

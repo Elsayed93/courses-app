@@ -13,7 +13,8 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::latest()->paginate(5);
+        $courses = Course::with('category:id,name')->latest()->paginate(5);
+        // dd($courses);
         return view('admin.courses.index', compact('courses'));
     }
 
@@ -62,9 +63,8 @@ class CourseController extends Controller
     // get all deleted courses
     public function deletedcourses()
     {
-        $deletedcourses = Course::onlyTrashed()->latest()->paginate(5);
-
-        return view('admin.courses.deleted_courses', compact('deletedcourses'));
+        $deletedCourses = Course::onlyTrashed()->latest()->paginate(5);
+        return view('admin.courses.deleted_courses', compact('deletedCourses'));
     }
 
     // restore deleted course

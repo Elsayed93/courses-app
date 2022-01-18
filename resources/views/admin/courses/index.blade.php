@@ -56,6 +56,13 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Name</th>
+                                        <th>description</th>
+                                        <th>category_id </th>
+                                        <th>rating</th>
+                                        <th> views</th>
+                                        <th>levels</th>
+                                        <th>hours</th>
+                                        <th>image</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -67,6 +74,16 @@
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>{{ $course->name }}</td>
+                                                <td>{{ $course->description }}</td>
+                                                <td>{{ $course->category->name }}</td>
+                                                <td>{{ $course->rating }}</td>
+                                                <td>{{ $course->views }}</td>
+                                                <td>{{ $course->levels }}</td>
+                                                <td>{{ $course->hours }}</td>
+                                                <td>
+                                                    <img src="{{ $course->image ? asset('uploads/courses_images/' . $course->image) : asset('uploads/courses_images/default.jpg') }}"
+                                                        alt="course image" class="img-thumbnail image-show" width="100">
+                                                </td>
                                                 <td>
                                                     @if ($course->active == 1)
                                                         <span class="badge bg-primary">Active</span>
@@ -76,7 +93,7 @@
                                                     @endif
 
                                                 </td>
-                                                <td>
+                                                <td style="width: 200px;">
 
                                                     <a href="{{ route('admin.courses.edit', $course->id) }}"
                                                         class="btn btn-warning btn-sm" title="edit">
