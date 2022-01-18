@@ -7,7 +7,7 @@ Simple Courses Application with Laravel
 ### 1.Make Clone
 
 ```
-git clone https://github.com/Elsayed93/videoWebsite.git
+git clone https://github.com/Elsayed93/courses-app.git
 ```
 
 ### 2.Install Composer Dependencies
