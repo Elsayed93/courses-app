@@ -33,13 +33,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
-                            <button class="nav-link active loginBtn" aria-current="page" type="submit">Login</button>
-                        </form>
+
+                        <a class="nav-link active loginBtn" aria-current="page" href="{{ route('login') }}">Login</a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="{{route('register')}}">Sign Up</a>
+                        <a class="nav-link btn btn-primary" href="{{ route('register') }}">Sign Up</a>
                     </li>
                 </ul>
                 <form class="d-flex">
