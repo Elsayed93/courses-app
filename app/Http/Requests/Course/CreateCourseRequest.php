@@ -30,6 +30,7 @@ class CreateCourseRequest extends FormRequest
             'views' => 'integer|min:0',
             'levels' => 'required',
             'hours' => 'integer|min:0',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }

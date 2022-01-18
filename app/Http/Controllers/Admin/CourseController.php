@@ -20,14 +20,14 @@ class CourseController extends Controller
     public function create()
     {
         $categories = Category::select('id', 'name')->get();
-        // dd($categories);
+
         return view('admin.courses.create', compact('categories'));
     }
 
     public function store(CreateCourseRequest $request)
     {
-// dd($request->all());
-        $data = new CourseDataObject();
+
+        $data = new CourseDataObject($request);
         $data = $data->storeDO($request);
 
         Course::create($data);
@@ -37,14 +37,15 @@ class CourseController extends Controller
 
     public function edit(Course $course)
     {
-        return view('admin.courses.edit', compact('course'));
+        $categories = Category::select('id', 'name')->get();
+        return view('admin.courses.edit', compact('course', 'categories'));
     }
 
     public function update(UpdateCourseRequest $request, Course $course)
     {
 
-        $data['name'] = $request->name;
-        $data['active'] = $request->active ? 1 : 0;
+        $data = new CourseDataObject($request);
+        $data = $data->updateDO($request, $course);
 
         $course->update($data);
 

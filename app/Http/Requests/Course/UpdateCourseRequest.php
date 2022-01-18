@@ -24,7 +24,13 @@ class UpdateCourseRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:191|unique:categories,name,' . $this->category->id,
+            'category_id' => 'required',
+            'name' => 'required|max:191|unique:courses,name,' . $this->course->id,
+            'rating' => 'integer|min:0|max:10',
+            'views' => 'integer|min:0',
+            'levels' => 'required',
+            'hours' => 'integer|min:0',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }
