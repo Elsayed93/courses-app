@@ -61,7 +61,7 @@ php artisan db:seed
 If you did step numer 9 , you don't need to register to login to the application.
 You can login to the application using the following credentials:
 
-email: admin@example.com <br>
-password 123456789
+email:    admin@example.com <br>
+password: 123456789
 
 </p>
