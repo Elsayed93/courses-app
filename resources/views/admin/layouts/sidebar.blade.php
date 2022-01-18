@@ -38,7 +38,8 @@
 
 
                   <li class="nav-item">
-                      <a href="{{ route('admin.categories.index') }}" class="nav-link {{request()->segment(2) == 'categories' ? 'active' : ''}}">
+                      <a href="{{ route('admin.categories.index') }}"
+                          class="nav-link {{ request()->segment(2) == 'categories' ? 'active' : '' }}">
                           <i class="nav-icon fas fa-th"></i>
                           <p>
                               Categories
@@ -47,7 +48,8 @@
                   </li>
 
                   <li class="nav-item">
-                      <a href="{{ route('admin.courses.index') }}" class="nav-link {{request()->segment(2) == 'courses' ? 'active' : ''}}">
+                      <a href="{{ route('admin.courses.index') }}"
+                          class="nav-link {{ request()->segment(2) == 'courses' ? 'active' : '' }}">
                           <i class="nav-icon fas fa-book"></i>
                           <p>
                               Courses
@@ -56,8 +58,10 @@
                   </li>
 
 
-                  <li class="nav-item {{request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses'  ? 'menu-open' : ''}}">
-                      <a href="#" class="nav-link {{request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses' ? 'active' : ''}}">
+                  <li
+                      class="nav-item {{ request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses' ? 'menu-open' : '' }}">
+                      <a href="#"
+                          class="nav-link {{ request()->segment(2) == 'deleted-categories' || request()->segment(2) == 'deleted-courses' ? 'active' : '' }}">
                           <i class="nav-icon fa fa-trash"></i>
                           <p>
                               Trash
@@ -67,30 +71,21 @@
 
                       <ul class="nav nav-treeview">
                           <li class="nav-item">
-                              <a href="{{route('admin.deleted.categories')}}" class="nav-link {{request()->segment(2) == 'deleted-categories' ? 'active' : ''}}">
+                              <a href="{{ route('admin.deleted.categories') }}"
+                                  class="nav-link {{ request()->segment(2) == 'deleted-categories' ? 'active' : '' }}">
                                   <i class="fas fa-th"></i>
                                   <p>Deleted Categories</p>
                               </a>
                           </li>
                           <li class="nav-item">
-                              <a href="{{route('admin.deleted.courses')}}" class="nav-link {{request()->segment(2) == 'deleted-courses' ? 'active' : ''}}">
+                              <a href="{{ route('admin.deleted.courses') }}"
+                                  class="nav-link {{ request()->segment(2) == 'deleted-courses' ? 'active' : '' }}">
                                   <i class="fas fa-book"></i>
                                   <p>Deleted Courses</p>
                               </a>
                           </li>
                       </ul>
                   </li>
-
-
-                  {{-- <li class="nav-item">
-                      <a href="#" class="nav-link">
-                          <i class="nav-icon fa fa-trash"></i>
-                          <p>
-                              Trash
-                          </p>
-                      </a>
-                  </li> --}}
-
               </ul>
 
           </nav>
