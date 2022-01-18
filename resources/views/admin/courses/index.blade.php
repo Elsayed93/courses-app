@@ -57,9 +57,9 @@
                                         <th>#</th>
                                         <th>Name</th>
                                         <th>description</th>
-                                        <th>category_id </th>
+                                        <th>Category</th>
                                         <th>rating</th>
-                                        <th> views</th>
+                                        <th>views</th>
                                         <th>levels</th>
                                         <th>hours</th>
                                         <th>image</th>
